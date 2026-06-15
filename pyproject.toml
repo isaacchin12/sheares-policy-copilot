@@ -1,0 +1,70 @@
+[tool.poetry]
+name = "sheares-policy-copilot"
+version = "0.1.0"
+description = "Adaptive RAG copilot for Sheares Hall policy questions"
+authors = ["Isaac Chin <isaacchin12@gmail.com>"]
+readme = "README.md"
+python = "^3.11"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+# LLM clients
+anthropic = "^0.28"
+openai = "^1.35"           # Azure OpenAI uses openai SDK
+
+# Agent orchestration & RAG
+langgraph = "^0.2"
+langchain = "^0.2"
+langchain-community = "^0.2"
+llama-index = "^0.10"
+llama-index-vector-stores-qdrant = "^0.2"
+
+# Vector DB & retrieval
+qdrant-client = "^1.10"
+rank-bm25 = "^0.2"
+sentence-transformers = "^3.0"   # bge-reranker
+
+# Document loaders
+pypdf = "^4.3"
+python-docx = "^1.1"
+openpyxl = "^3.1"
+unstructured = {extras = ["docx", "pdf"], version = "^0.14"}
+
+# PII redaction
+presidio-analyzer = "^2.2"
+presidio-anonymizer = "^2.2"
+
+# API & UI
+fastapi = "^0.111"
+uvicorn = {extras = ["standard"], version = "^0.30"}
+sse-starlette = "^2.1"
+streamlit = "^1.36"
+
+# Eval
+ragas = "^0.1"
+
+# Observability & logging
+langfuse = "^2.36"
+structlog = "^24.2"
+
+# Structured outputs & config
+pydantic = "^2.7"
+pydantic-settings = "^2.3"
+python-dotenv = "^1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2"
+pytest-asyncio = "^0.23"
+ruff = "^0.5"
+mypy = "^1.10"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

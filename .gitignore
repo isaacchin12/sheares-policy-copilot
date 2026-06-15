@@ -1,7 +1,9 @@
 # ── Secrets & environment ────────────────────────────────────────────────────
 .env
-.env.*
-*.env
+.env.local
+.env.*.local
+# Allow .env.example (safe template without real secrets)
+!.env.example
 secrets/
 
 # ── Real (PII-containing) corpus — NEVER committed ───────────────────────────
