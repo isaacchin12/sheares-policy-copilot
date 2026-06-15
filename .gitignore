@@ -1,0 +1,68 @@
+# ── Secrets & environment ────────────────────────────────────────────────────
+.env
+.env.*
+*.env
+secrets/
+
+# ── Real (PII-containing) corpus — NEVER committed ───────────────────────────
+data/real/
+corpus/
+/Users/isaacchin/Desktop/SHEARES*/
+
+# ── Index / vector store caches ──────────────────────────────────────────────
+index_cache.*
+*.pkl
+*.faiss
+qdrant_storage/
+
+# ── Langfuse / observability volumes ─────────────────────────────────────────
+langfuse_data/
+postgres_data/
+clickhouse_data/
+
+# ── Application logs ─────────────────────────────────────────────────────────
+logs/*.log
+logs/*.jsonl
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+
+# ── Node / frontend ──────────────────────────────────────────────────────────
+node_modules/
+.next/
+out/
+
+# ── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Test / coverage ──────────────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ── Docker volumes (local dev) ───────────────────────────────────────────────
+docker-volumes/
+
+# ── Eval artefacts (generated, not source) ───────────────────────────────────
+eval/results/
+eval/*.tmp
